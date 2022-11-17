@@ -1,0 +1,38 @@
+{
+    "/dm/erd/entity_2/delete-all": {
+        "post": {
+            "consumes": [],
+            "produces": [],
+            "parameters": [
+                {
+                    "in": "body",
+                    "name": "body",
+                    "schema": {
+                        "properties": {
+                            "filter": {
+                                "type": "object"
+                            }
+                        },
+                        "required": [
+                            "filter"
+                        ]
+                    }
+                }
+            ],
+            "responses": {
+                "200": {
+                    "schema": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/definitions/erd ~ entity_2"
+                        }
+                    },
+                    "description": ""
+                }
+            },
+            "tags": [
+                "entity_2"
+            ]
+        }
+    }
+}
