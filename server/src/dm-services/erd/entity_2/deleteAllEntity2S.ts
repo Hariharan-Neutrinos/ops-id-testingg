@@ -159,7 +159,7 @@ export class deleteAllEntity2S {
 
       return bh;
     } catch (e) {
-      return await this.errorHandler(bh, e, 'sd_8akolQPywQ1lFU2j');
+      return await this.errorHandler(bh, e, 'sd_IpUaU51q741upXgr');
     }
   }
 

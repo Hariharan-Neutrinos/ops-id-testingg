@@ -154,7 +154,7 @@ export class updateEntity1ById {
       //appendnew_next_sd_FDbjNXkSFwPpoKmy
       return bh;
     } catch (e) {
-      return await this.errorHandler(bh, e, 'sd_1QlIUlGCQfVCKXxB');
+      return await this.errorHandler(bh, e, 'sd_FDbjNXkSFwPpoKmy');
     }
   }
 
@@ -164,7 +164,7 @@ export class updateEntity1ById {
 
       return bh;
     } catch (e) {
-      return await this.errorHandler(bh, e, 'sd_3hWHwhzjcY1qUZkV');
+      return await this.errorHandler(bh, e, 'sd_IpUaU51q741upXgr');
     }
   }
 

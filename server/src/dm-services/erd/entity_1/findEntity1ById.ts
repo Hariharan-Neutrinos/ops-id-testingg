@@ -13,7 +13,6 @@ import { SDBaseService } from '../../../services/SDBaseService'; //_splitter_
 import { Middleware } from '../../../middleware/Middleware'; //_splitter_
 import * as settings from '../../../config/config'; //_splitter_
 import log from '../../../utils/Logger'; //_splitter_
-import { dmUtils } from '../../../utils/ndefault-datamodel/find/dmUtils'; //_splitter_
 //append_imports_end
 export class findEntity1ById {
   private sdService = new SDBaseService();
@@ -131,36 +130,6 @@ export class findEntity1ById {
 
   async sd_0grguYfj00JSLkeH(bh) {
     try {
-      this.sdService.addDMPropertiesToBh(bh, bh.web.req, 'entity_1');
-      bh = await this.sd_qqLgP9AJmGPH7ICY(bh);
-      //appendnew_next_sd_0grguYfj00JSLkeH
-      return bh;
-    } catch (e) {
-      return await this.errorHandler(bh, e, 'sd_AvTPBZaTPoqxqWtc');
-    }
-  }
-
-  async sd_qqLgP9AJmGPH7ICY(bh) {
-    try {
-      let dmUtilsInst = new dmUtils('sd_MsveiTdT4FSAQYZr');
-      bh.result = await dmUtilsInst.find(
-        '_EN_ez1516135p',
-        bh.filter,
-        bh.offSet,
-        bh.orderBy,
-        bh.pageSize
-      );
-
-      bh = await this.sd_Uy6YQRY2XusncHsv(bh);
-      //appendnew_next_sd_qqLgP9AJmGPH7ICY
-      return bh;
-    } catch (e) {
-      return await this.errorHandler(bh, e, 'sd_qqLgP9AJmGPH7ICY');
-    }
-  }
-
-  async sd_Uy6YQRY2XusncHsv(bh) {
-    try {
       if (bh.result) {
         if (Array.isArray(bh.result) && bh.result.length) {
           bh.result = bh.result[0];
@@ -169,10 +138,10 @@ export class findEntity1ById {
         throw new Error('Not found.');
       }
       bh = await this.sd_IpUaU51q741upXgr(bh);
-      //appendnew_next_sd_Uy6YQRY2XusncHsv
+      //appendnew_next_sd_0grguYfj00JSLkeH
       return bh;
     } catch (e) {
-      return await this.errorHandler(bh, e, 'sd_Uy6YQRY2XusncHsv');
+      return await this.errorHandler(bh, e, 'sd_0grguYfj00JSLkeH');
     }
   }
 
@@ -182,7 +151,7 @@ export class findEntity1ById {
 
       return bh;
     } catch (e) {
-      return await this.errorHandler(bh, e, 'sd_FI2nxhhypoVNHMPc');
+      return await this.errorHandler(bh, e, 'sd_IpUaU51q741upXgr');
     }
   }
 
