@@ -1,0 +1,38 @@
+{
+    "/dm/erd/entity_1/create": {
+        "post": {
+            "consumes": [],
+            "produces": [],
+            "parameters": [
+                {
+                    "in": "body",
+                    "name": "body",
+                    "schema": {
+                        "type": "object",
+                        "properties": {
+                            "entity_1": {
+                                "$ref": "#/definitions/erd ~ entity_1",
+                                "required": []
+                            }
+                        },
+                        "required": []
+                    }
+                }
+            ],
+            "responses": {
+                "200": {
+                    "schema": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/definitions/erd ~ entity_1"
+                        }
+                    },
+                    "description": ""
+                }
+            },
+            "tags": [
+                "entity_1"
+            ]
+        }
+    }
+}

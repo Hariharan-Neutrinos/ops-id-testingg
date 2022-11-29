@@ -4,7 +4,7 @@
     "description": "",
     "type": "object",
     "id": "_EN_ez1516135p",
-    "y": 43,
+    "y": 41,
     "properties": {
         "id": {
             "name": "id",
@@ -23,83 +23,37 @@
                     "primaryGenerated": true
                 }
             }
-        },
-        "name1": {
-            "name": "name1",
-            "format": "",
-            "type": "string",
-            "description": "",
-            "default": "",
-            "__n__metadata__": {
-                "id": "_Att_u3oem6cp9v",
-                "subCategoryType": null,
-                "nullable": false,
-                "dbType": "text",
-                "primary": false,
-                "placeholder": "",
-                "dbColName": "",
-                "constraints": {}
-            }
-        },
-        "name2": {
-            "name": "name2",
-            "format": "",
-            "type": "string",
-            "description": "",
-            "default": "",
-            "__n__metadata__": {
-                "id": "_Att_pltx9nnihf",
-                "subCategoryType": null,
-                "nullable": false,
-                "dbType": "text",
-                "primary": false,
-                "placeholder": "",
-                "dbColName": "",
-                "constraints": {}
-            }
-        },
-        "name3": {
-            "name": "name3",
-            "format": "",
-            "type": "string",
-            "description": "",
-            "default": "",
-            "__n__metadata__": {
-                "id": "_Att_7yrb8dgr96",
-                "subCategoryType": null,
-                "nullable": false,
-                "dbType": "text",
-                "primary": false,
-                "placeholder": "",
-                "dbColName": "",
-                "constraints": {}
-            }
-        },
-        "name4": {
-            "name": "name4",
-            "format": "",
-            "type": "string",
-            "description": "",
-            "default": "",
-            "__n__metadata__": {
-                "id": "_Att_glss7qfajp",
-                "subCategoryType": null,
-                "nullable": false,
-                "dbType": "text",
-                "primary": false,
-                "placeholder": "",
-                "dbColName": "",
-                "constraints": {}
-            }
         }
     },
-    "required": [
-        "name1",
-        "name2",
-        "name3",
-        "name4"
-    ],
+    "required": [],
     "value": "",
-    "x": 41,
-    "__n__metadata__": {}
+    "x": 60,
+    "__n__metadata__": {
+        "operations": [
+            {
+                "name": "create",
+                "HttpIn": "sd_0XRNhfkIgeNkzsRY",
+                "HttpOut": "sd_IpUaU51q741upXgr",
+                "Script": "sd_0grguYfj00JSLkeH",
+                "tab": "SERVICE_ID_1122NEU2211erd1122NEU2211id1122NEU2211entity_11122NEU2211createEntity1",
+                "function": "sd_v3BNreQuumFcKyr0"
+            },
+            {
+                "name": "find-all",
+                "tab": "SERVICE_ID_1122NEU2211erd1122NEU2211id1122NEU2211entity_11122NEU2211findAllEntity1S",
+                "HttpOut": "sd_IpUaU51q741upXgr",
+                "HttpIn": "sd_OH4SXwU5AJM3eSnO",
+                "Script": "sd_0grguYfj00JSLkeH",
+                "function": "sd_E6Q1W94en23dT9Af"
+            },
+            {
+                "name": "find-by-id",
+                "tab": "SERVICE_ID_1122NEU2211erd1122NEU2211id1122NEU2211entity_11122NEU2211findEntity1ById",
+                "HttpOut": "sd_IpUaU51q741upXgr",
+                "HttpIn": "sd_fsw1pjRkU8J9upRE",
+                "Script": "sd_0grguYfj00JSLkeH",
+                "function": "sd_8kF5jP5U8q61mZFv"
+            }
+        ]
+    }
 }
