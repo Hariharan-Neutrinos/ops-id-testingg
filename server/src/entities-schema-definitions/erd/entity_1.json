@@ -28,32 +28,5 @@
     "required": [],
     "value": "",
     "x": 60,
-    "__n__metadata__": {
-        "operations": [
-            {
-                "name": "create",
-                "HttpIn": "sd_0XRNhfkIgeNkzsRY",
-                "HttpOut": "sd_IpUaU51q741upXgr",
-                "Script": "sd_0grguYfj00JSLkeH",
-                "tab": "SERVICE_ID_1122NEU2211erd1122NEU2211id1122NEU2211entity_11122NEU2211createEntity1",
-                "function": "sd_v3BNreQuumFcKyr0"
-            },
-            {
-                "name": "find-all",
-                "tab": "SERVICE_ID_1122NEU2211erd1122NEU2211id1122NEU2211entity_11122NEU2211findAllEntity1S",
-                "HttpOut": "sd_IpUaU51q741upXgr",
-                "HttpIn": "sd_OH4SXwU5AJM3eSnO",
-                "Script": "sd_0grguYfj00JSLkeH",
-                "function": "sd_E6Q1W94en23dT9Af"
-            },
-            {
-                "name": "find-by-id",
-                "tab": "SERVICE_ID_1122NEU2211erd1122NEU2211id1122NEU2211entity_11122NEU2211findEntity1ById",
-                "HttpOut": "sd_IpUaU51q741upXgr",
-                "HttpIn": "sd_fsw1pjRkU8J9upRE",
-                "Script": "sd_0grguYfj00JSLkeH",
-                "function": "sd_8kF5jP5U8q61mZFv"
-            }
-        ]
-    }
+    "__n__metadata__": {}
 }
