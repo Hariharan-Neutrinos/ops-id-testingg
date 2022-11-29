@@ -1,5 +1,5 @@
 {
-    "name": "entity_1",
+    "name": "entity_2",
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "description": "",
     "type": "object",
@@ -23,9 +23,28 @@
                     "primaryGenerated": true
                 }
             }
+        },
+        "name1": {
+            "name": "name1",
+            "format": "",
+            "type": "string",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_2b2enhj3a0",
+                "subCategoryType": null,
+                "nullable": false,
+                "dbType": "text",
+                "primary": false,
+                "placeholder": "",
+                "dbColName": "",
+                "constraints": {}
+            }
         }
     },
-    "required": [],
+    "required": [
+        "name1"
+    ],
     "value": "",
     "x": 60,
     "__n__metadata__": {}
