@@ -4,7 +4,6 @@
         "name": "erd",
         "dbType": "dbModel",
         "dbConfigId": "sd_MsveiTdT4FSAQYZr",
-        "dbName": "postgres",
-        "schemas": {}
+        "dbName": "postgres"
     }
 }
