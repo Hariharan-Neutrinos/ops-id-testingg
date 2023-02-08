@@ -1,0 +1,118 @@
+{
+    "name": "entity_1",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "description": "",
+    "type": "object",
+    "id": "_EN_0yr9cbpxpn",
+    "y": 123,
+    "properties": {
+        "id": {
+            "name": "id",
+            "format": "",
+            "type": "number",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_5khopp3gwm",
+                "nullable": false,
+                "dbType": "bigint",
+                "primary": true,
+                "placeholder": "",
+                "dbColName": "",
+                "constraints": {
+                    "primaryGenerated": true
+                }
+            }
+        },
+        "name1": {
+            "name": "name1",
+            "format": "",
+            "type": "string",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_phy83yy001",
+                "subCategoryType": null,
+                "nullable": false,
+                "dbType": "text",
+                "primary": false,
+                "placeholder": "",
+                "dbColName": "",
+                "constraints": {}
+            }
+        }
+    },
+    "required": [
+        "name1"
+    ],
+    "value": "",
+    "x": 168,
+    "__n__metadata__": {
+        "operations": [
+            {
+                "name": "create",
+                "tab": "SERVICE_ID_1122NEU2211erd1122NEU2211id1122NEU2211entity_11122NEU2211createEntity1",
+                "HttpIn": "sd_S9ZfNa58CbyYbAlS",
+                "Script": "sd_0grguYfj00JSLkeH",
+                "function": "sd_fCU1Gx2i3ifC2HhK",
+                "HttpOut": "sd_IpUaU51q741upXgr"
+            },
+            {
+                "name": "create-all",
+                "tab": "SERVICE_ID_1122NEU2211erd1122NEU2211id1122NEU2211entity_11122NEU2211createAllEntity1",
+                "HttpIn": "sd_VP3kQ1seSgJBfuSj",
+                "Script": "sd_0grguYfj00JSLkeH",
+                "function": "sd_qsVQDKbehinqvOuo",
+                "HttpOut": "sd_IpUaU51q741upXgr"
+            },
+            {
+                "name": "delete-all",
+                "tab": "SERVICE_ID_1122NEU2211erd1122NEU2211id1122NEU2211entity_11122NEU2211deleteAllEntity1S",
+                "HttpIn": "sd_wSFFA6vtCXeEEUcH",
+                "Script": "sd_WZCH9P9qCQ53Uo0C",
+                "function": "sd_C3CsdSDmihKC1Fon",
+                "HttpOut": "sd_IpUaU51q741upXgr"
+            },
+            {
+                "name": "delete-by-id",
+                "tab": "SERVICE_ID_1122NEU2211erd1122NEU2211id1122NEU2211entity_11122NEU2211deleteEntity1ById",
+                "HttpIn": "sd_PFobpC9MjcQt0wmY",
+                "Script": "sd_B3Qci5dMhVLXOtKX",
+                "function": "sd_eMglZeKptec2w49x",
+                "HttpOut": "sd_IpUaU51q741upXgr"
+            },
+            {
+                "name": "find-all",
+                "tab": "SERVICE_ID_1122NEU2211erd1122NEU2211id1122NEU2211entity_11122NEU2211findAllEntity1S",
+                "HttpOut": "sd_IpUaU51q741upXgr",
+                "HttpIn": "sd_Igxhfe2Qg3EXQ6fr",
+                "Script": "sd_0grguYfj00JSLkeH",
+                "function": "sd_E4pLtdgXOIBDlhbs"
+            },
+            {
+                "name": "find-by-id",
+                "tab": "SERVICE_ID_1122NEU2211erd1122NEU2211id1122NEU2211entity_11122NEU2211findEntity1ById",
+                "HttpOut": "sd_IpUaU51q741upXgr",
+                "HttpIn": "sd_nmqvnZatvHKHT4QW",
+                "Script": "sd_0grguYfj00JSLkeH",
+                "function": "sd_0QdugsOAbiYiMI5Y"
+            },
+            {
+                "name": "update-all",
+                "tab": "SERVICE_ID_1122NEU2211erd1122NEU2211id1122NEU2211entity_11122NEU2211updateAllEntity1S",
+                "HttpIn": "sd_BeCbHfByAB0QTrKI",
+                "Script": "sd_BUriOIptFuwtqa3W",
+                "function": "sd_8R9kDyRFeBfyGmoi",
+                "HttpOut": "sd_IpUaU51q741upXgr"
+            },
+            {
+                "name": "update-by-id",
+                "tab": "SERVICE_ID_1122NEU2211erd1122NEU2211id1122NEU2211entity_11122NEU2211updateEntity1ById",
+                "HttpIn": "sd_CJ3lIVGBHgmchbgb",
+                "Script": "sd_RxwEtn13yQphuyb7",
+                "function": "sd_FDbjNXkSFwPpoKmy",
+                "HttpOut": "sd_IpUaU51q741upXgr"
+            }
+        ]
+    }
+}
