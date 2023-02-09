@@ -15,7 +15,6 @@ import { Middleware } from '../../../middleware/Middleware'; //_splitter_
 import * as settings from '../../../config/config'; //_splitter_
 import log from '../../../utils/Logger'; //_splitter_
 import { TracerService } from '../../../services/TracerService'; //_splitter_
-import { DmUtils } from '../../../utils/ndefault-datamodel/find/dmUtils'; //_splitter_
 //append_imports_end
 export class findEntity1ById {
   private sdService = new SDBaseService();
@@ -131,58 +130,6 @@ export class findEntity1ById {
       parentSpanInst
     );
     try {
-      this.sdService.addDMPropertiesToBh(bh, bh.web.req, 'entity_1');
-      this.tracerService.sendData(spanInst, bh);
-      bh = await this.sd_0QdugsOAbiYiMI5Y(bh, parentSpanInst);
-      //appendnew_next_sd_0grguYfj00JSLkeH
-      return bh;
-    } catch (e) {
-      return await this.errorHandler(
-        bh,
-        e,
-        'sd_aSS7ecU70O4ga2kg',
-        spanInst,
-        'sd_0grguYfj00JSLkeH'
-      );
-    }
-  }
-
-  async sd_0QdugsOAbiYiMI5Y(bh, parentSpanInst) {
-    const spanInst = this.tracerService.createSpan(
-      'sd_0QdugsOAbiYiMI5Y',
-      parentSpanInst
-    );
-    try {
-      const dmUtilsInst = new DmUtils('sd_MsveiTdT4FSAQYZr');
-      bh.result = await dmUtilsInst.find(
-        '_EN_0yr9cbpxpn',
-        bh.filter,
-        bh.offSet,
-        bh.orderBy,
-        bh.pageSize
-      );
-
-      this.tracerService.sendData(spanInst, bh);
-      bh = await this.sd_cleVO0zkW23MCOvg(bh, parentSpanInst);
-      //appendnew_next_sd_0QdugsOAbiYiMI5Y
-      return bh;
-    } catch (e) {
-      return await this.errorHandler(
-        bh,
-        e,
-        'sd_0QdugsOAbiYiMI5Y',
-        spanInst,
-        'sd_0QdugsOAbiYiMI5Y'
-      );
-    }
-  }
-
-  async sd_cleVO0zkW23MCOvg(bh, parentSpanInst) {
-    const spanInst = this.tracerService.createSpan(
-      'sd_cleVO0zkW23MCOvg',
-      parentSpanInst
-    );
-    try {
       if (bh.result) {
         if (Array.isArray(bh.result) && bh.result.length) {
           bh.result = bh.result[0];
@@ -192,15 +139,15 @@ export class findEntity1ById {
       }
       this.tracerService.sendData(spanInst, bh);
       await this.sd_IpUaU51q741upXgr(bh, parentSpanInst);
-      //appendnew_next_sd_cleVO0zkW23MCOvg
+      //appendnew_next_sd_0grguYfj00JSLkeH
       return bh;
     } catch (e) {
       return await this.errorHandler(
         bh,
         e,
-        'sd_cleVO0zkW23MCOvg',
+        'sd_0grguYfj00JSLkeH',
         spanInst,
-        'sd_cleVO0zkW23MCOvg'
+        'sd_0grguYfj00JSLkeH'
       );
     }
   }
@@ -211,7 +158,7 @@ export class findEntity1ById {
 
       return bh;
     } catch (e) {
-      return await this.errorHandler(bh, e, 'sd_tmJki1TNksFjEb2z');
+      return await this.errorHandler(bh, e, 'sd_IpUaU51q741upXgr');
     }
   }
 
