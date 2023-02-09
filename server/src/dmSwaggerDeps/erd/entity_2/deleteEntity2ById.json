@@ -1,5 +1,5 @@
 {
-    "/dm/erd/entity_1/find-by-id": {
+    "/dm/erd/entity_2/delete-by-id": {
         "post": {
             "consumes": [],
             "produces": [],
@@ -32,14 +32,14 @@
                     "schema": {
                         "type": "array",
                         "items": {
-                            "$ref": "#/definitions/erd ~ entity_1"
+                            "$ref": "#/definitions/erd ~ entity_2"
                         }
                     },
                     "description": ""
                 }
             },
             "tags": [
-                "entity_1"
+                "entity_2"
             ]
         }
     }

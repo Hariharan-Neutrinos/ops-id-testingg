@@ -1,5 +1,5 @@
 {
-    "/dm/erd/entity_1/update-by-id": {
+    "/dm/erd/entity_2/delete-all": {
         "post": {
             "consumes": [],
             "produces": [],
@@ -8,14 +8,14 @@
                     "in": "body",
                     "name": "body",
                     "schema": {
-                        "type": "object",
                         "properties": {
-                            "entity_1": {
-                                "$ref": "#/definitions/erd ~ entity_1",
-                                "required": []
+                            "filter": {
+                                "type": "object"
                             }
                         },
-                        "required": []
+                        "required": [
+                            "filter"
+                        ]
                     }
                 }
             ],
@@ -24,14 +24,14 @@
                     "schema": {
                         "type": "array",
                         "items": {
-                            "$ref": "#/definitions/erd ~ entity_1"
+                            "$ref": "#/definitions/erd ~ entity_2"
                         }
                     },
                     "description": ""
                 }
             },
             "tags": [
-                "entity_1"
+                "entity_2"
             ]
         }
     }

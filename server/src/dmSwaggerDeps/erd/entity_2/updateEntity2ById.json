@@ -1,5 +1,5 @@
 {
-    "/dm/erd/entity_1/create": {
+    "/dm/erd/entity_2/update-by-id": {
         "post": {
             "consumes": [],
             "produces": [],
@@ -10,8 +10,8 @@
                     "schema": {
                         "type": "object",
                         "properties": {
-                            "entity_1": {
-                                "$ref": "#/definitions/erd ~ entity_1",
+                            "entity_2": {
+                                "$ref": "#/definitions/erd ~ entity_2",
                                 "required": []
                             }
                         },
@@ -24,14 +24,14 @@
                     "schema": {
                         "type": "array",
                         "items": {
-                            "$ref": "#/definitions/erd ~ entity_1"
+                            "$ref": "#/definitions/erd ~ entity_2"
                         }
                     },
                     "description": ""
                 }
             },
             "tags": [
-                "entity_1"
+                "entity_2"
             ]
         }
     }

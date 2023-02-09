@@ -1,5 +1,5 @@
 {
-    "/dm/erd/entity_1/find-all": {
+    "/dm/erd/entity_2/update-all": {
         "post": {
             "consumes": [],
             "produces": [],
@@ -8,25 +8,25 @@
                     "in": "body",
                     "name": "body",
                     "schema": {
+                        "type": "object",
                         "properties": {
                             "filter": {
-                                "type": "object"
+                                "type": "object",
+                                "properties": {
+                                    "id": {
+                                        "type": "number"
+                                    }
+                                },
+                                "required": [
+                                    "id"
+                                ]
                             },
-                            "orderBy": {
-                                "type": "object"
-                            },
-                            "pageSize": {
-                                "type": "number",
-                                "minimum": 0
-                            },
-                            "offSet": {
-                                "type": "number",
-                                "minimum": 0
+                            "entity_2": {
+                                "$ref": "#/definitions/erd ~ entity_2",
+                                "required": []
                             }
                         },
-                        "required": [
-                            "filter"
-                        ]
+                        "required": []
                     }
                 }
             ],
@@ -35,14 +35,14 @@
                     "schema": {
                         "type": "array",
                         "items": {
-                            "$ref": "#/definitions/erd ~ entity_1"
+                            "$ref": "#/definitions/erd ~ entity_2"
                         }
                     },
                     "description": ""
                 }
             },
             "tags": [
-                "entity_1"
+                "entity_2"
             ]
         }
     }

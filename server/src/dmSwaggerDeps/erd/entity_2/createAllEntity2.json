@@ -1,5 +1,5 @@
 {
-    "/dm/erd/entity_1/create-all": {
+    "/dm/erd/entity_2/create-all": {
         "post": {
             "consumes": [],
             "produces": [],
@@ -10,9 +10,9 @@
                     "schema": {
                         "type": "array",
                         "properties": {
-                            "entity_1": {
+                            "entity_2": {
                                 "items": {
-                                    "$ref": "#/definitions/erd ~ entity_1"
+                                    "$ref": "#/definitions/erd ~ entity_2"
                                 }
                             }
                         },
@@ -25,14 +25,14 @@
                     "schema": {
                         "type": "array",
                         "items": {
-                            "$ref": "#/definitions/erd ~ entity_1"
+                            "$ref": "#/definitions/erd ~ entity_2"
                         }
                     },
                     "description": ""
                 }
             },
             "tags": [
-                "entity_1"
+                "entity_2"
             ]
         }
     }

@@ -1,3 +1,3 @@
-import * as _EN_0yr9cbpxpn from '../entities/erd/entity_1';
+import * as _EN_s3flkd0m0o from '../entities/erd/entity_2';
 
-export const EntityMap = { _EN_0yr9cbpxpn: _EN_0yr9cbpxpn['entity_1'] };
+export const EntityMap = { _EN_s3flkd0m0o: _EN_s3flkd0m0o['entity_2'] };

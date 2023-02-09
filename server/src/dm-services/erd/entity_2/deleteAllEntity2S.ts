@@ -15,8 +15,9 @@ import { Middleware } from '../../../middleware/Middleware'; //_splitter_
 import * as settings from '../../../config/config'; //_splitter_
 import log from '../../../utils/Logger'; //_splitter_
 import { TracerService } from '../../../services/TracerService'; //_splitter_
+import { DmUtils } from '../../../utils/ndefault-datamodel/find/dmUtils'; //_splitter_
 //append_imports_end
-export class findEntity1ById {
+export class deleteAllEntity2S {
   private sdService = new SDBaseService();
   private tracerService = new TracerService();
   private app;
@@ -32,7 +33,7 @@ export class findEntity1ById {
     middlewareCall,
     globalTimers
   ) {
-    this.serviceName = 'findEntity1ById';
+    this.serviceName = 'deleteAllEntity2S';
     this.app = app;
     this.serviceBasePath = this.app.settings.base;
     this.generatedMiddlewares = generatedeMiddlewares;
@@ -47,7 +48,7 @@ export class findEntity1ById {
     globalTimers?
   ) {
     if (!instance) {
-      instance = new findEntity1ById(
+      instance = new deleteAllEntity2S(
         app,
         generatedeMiddlewares,
         routeCall,
@@ -76,19 +77,19 @@ export class findEntity1ById {
   }
 
   async mountTimers() {
-    //appendnew_flow_findEntity1ById_TimerStart
+    //appendnew_flow_deleteAllEntity2S_TimerStart
   }
 
   private mountAllMiddlewares() {
-    log.debug('mounting all middlewares for service :: findEntity1ById');
-    //appendnew_flow_findEntity1ById_MiddlewareStart
+    log.debug('mounting all middlewares for service :: deleteAllEntity2S');
+    //appendnew_flow_deleteAllEntity2S_MiddlewareStart
   }
 
   private mountAllPaths() {
-    log.debug('mounting all paths for service :: findEntity1ById');
+    log.debug('mounting all paths for service :: deleteAllEntity2S');
 
     this.app['post'](
-      `${this.serviceBasePath}/dm/erd/entity_1/find-by-id`,
+      `${this.serviceBasePath}/dm/erd/entity_2/delete-all`,
       cookieParser(),
       this.sdService.getMiddlesWaresBySequenceId(
         null,
@@ -106,10 +107,10 @@ export class findEntity1ById {
             next
           );
           let parentSpanInst = null;
-          bh = await this.sd_0grguYfj00JSLkeH(bh, parentSpanInst);
-          //appendnew_next_sd_nmqvnZatvHKHT4QW
+          bh = await this.___addToBh___(bh, parentSpanInst);
+          //appendnew_next_sd_Rv4kjRulVI3x4kSi
         } catch (e) {
-          return await this.errorHandler(bh, e, 'sd_nmqvnZatvHKHT4QW');
+          return await this.errorHandler(bh, e, 'sd_Rv4kjRulVI3x4kSi');
         }
       },
       this.sdService.getMiddlesWaresBySequenceId(
@@ -118,36 +119,54 @@ export class findEntity1ById {
         this.generatedMiddlewares
       )
     );
-    //appendnew_flow_findEntity1ById_HttpIn
+    //appendnew_flow_deleteAllEntity2S_HttpIn
   }
-  //   service flows_findEntity1ById
+  //   service flows_deleteAllEntity2S
 
-  //appendnew_flow_findEntity1ById_start
+  //appendnew_flow_deleteAllEntity2S_start
 
-  async sd_0grguYfj00JSLkeH(bh, parentSpanInst) {
+  async ___addToBh___(bh, parentSpanInst) {
     const spanInst = this.tracerService.createSpan(
-      'sd_0grguYfj00JSLkeH',
+      '___addToBh___',
       parentSpanInst
     );
     try {
-      if (bh.result) {
-        if (Array.isArray(bh.result) && bh.result.length) {
-          bh.result = bh.result[0];
-        }
-      } else {
-        throw new Error('Not found.');
-      }
+      this.sdService.addDMPropertiesToBh(bh, bh.web.req, 'entity_2');
       this.tracerService.sendData(spanInst, bh);
-      await this.sd_IpUaU51q741upXgr(bh, parentSpanInst);
-      //appendnew_next_sd_0grguYfj00JSLkeH
+      bh = await this.__operationNode__(bh, parentSpanInst);
+      //appendnew_next____addToBh___
       return bh;
     } catch (e) {
       return await this.errorHandler(
         bh,
         e,
-        'sd_0grguYfj00JSLkeH',
+        '___addToBh___',
         spanInst,
-        'sd_0grguYfj00JSLkeH'
+        '___addToBh___'
+      );
+    }
+  }
+
+  async __operationNode__(bh, parentSpanInst) {
+    const spanInst = this.tracerService.createSpan(
+      '__operationNode__',
+      parentSpanInst
+    );
+    try {
+      const dmUtilsInst = new DmUtils('sd_MsveiTdT4FSAQYZr');
+      bh.result = await dmUtilsInst.delete('_EN_s3flkd0m0o', bh.filter);
+
+      this.tracerService.sendData(spanInst, bh);
+      await this.sd_IpUaU51q741upXgr(bh, parentSpanInst);
+      //appendnew_next___operationNode__
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(
+        bh,
+        e,
+        '__operationNode__',
+        spanInst,
+        '__operationNode__'
       );
     }
   }
@@ -158,7 +177,7 @@ export class findEntity1ById {
 
       return bh;
     } catch (e) {
-      return await this.errorHandler(bh, e, 'sd_IpUaU51q741upXgr');
+      return await this.errorHandler(bh, e, '__httpOutResult__');
     }
   }
 
@@ -171,5 +190,5 @@ export class findEntity1ById {
     this.tracerService.sendData(parentSpanInst, bh, true);
     throw e;
   }
-  //appendnew_flow_findEntity1ById_Catch
+  //appendnew_flow_deleteAllEntity2S_Catch
 }
