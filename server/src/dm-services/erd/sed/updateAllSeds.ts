@@ -15,10 +15,9 @@ import { Middleware } from '../../../middleware/Middleware'; //_splitter_
 import * as settings from '../../../config/config'; //_splitter_
 import log from '../../../utils/Logger'; //_splitter_
 import { TracerService } from '../../../services/TracerService'; //_splitter_
-import { validateRequest } from '../../../middleware/SchemaValidator'; //_splitter_
 import { DmUtils } from '../../../utils/ndefault-datamodel/find/dmUtils'; //_splitter_
 //append_imports_end
-export class updateEntity2ById {
+export class updateAllSeds {
   private sdService = new SDBaseService();
   private tracerService = new TracerService();
   private app;
@@ -34,7 +33,7 @@ export class updateEntity2ById {
     middlewareCall,
     globalTimers
   ) {
-    this.serviceName = 'updateEntity2ById';
+    this.serviceName = 'updateAllSeds';
     this.app = app;
     this.serviceBasePath = this.app.settings.base;
     this.generatedMiddlewares = generatedeMiddlewares;
@@ -49,7 +48,7 @@ export class updateEntity2ById {
     globalTimers?
   ) {
     if (!instance) {
-      instance = new updateEntity2ById(
+      instance = new updateAllSeds(
         app,
         generatedeMiddlewares,
         routeCall,
@@ -78,19 +77,19 @@ export class updateEntity2ById {
   }
 
   async mountTimers() {
-    //appendnew_flow_updateEntity2ById_TimerStart
+    //appendnew_flow_updateAllSeds_TimerStart
   }
 
   private mountAllMiddlewares() {
-    log.debug('mounting all middlewares for service :: updateEntity2ById');
-    //appendnew_flow_updateEntity2ById_MiddlewareStart
+    log.debug('mounting all middlewares for service :: updateAllSeds');
+    //appendnew_flow_updateAllSeds_MiddlewareStart
   }
 
   private mountAllPaths() {
-    log.debug('mounting all paths for service :: updateEntity2ById');
+    log.debug('mounting all paths for service :: updateAllSeds');
 
     this.app['post'](
-      `${this.serviceBasePath}/dm/erd/entity_2/update-by-id`,
+      `${this.serviceBasePath}/dm/erd/sed/update-all`,
       cookieParser(),
       this.sdService.getMiddlesWaresBySequenceId(
         null,
@@ -98,7 +97,6 @@ export class updateEntity2ById {
         this.generatedMiddlewares
       ),
 
-      validateRequest(),
       async (req, res, next) => {
         let bh: any = {};
         try {
@@ -121,11 +119,11 @@ export class updateEntity2ById {
         this.generatedMiddlewares
       )
     );
-    //appendnew_flow_updateEntity2ById_HttpIn
+    //appendnew_flow_updateAllSeds_HttpIn
   }
-  //   service flows_updateEntity2ById
+  //   service flows_updateAllSeds
 
-  //appendnew_flow_updateEntity2ById_start
+  //appendnew_flow_updateAllSeds_start
 
   async ___addToBh___(bh, parentSpanInst) {
     const spanInst = this.tracerService.createSpan(
@@ -133,9 +131,9 @@ export class updateEntity2ById {
       parentSpanInst
     );
     try {
-      this.sdService.addDMPropertiesToBh(bh, bh.web.req, 'entity_2');
+      this.sdService.addDMPropertiesToBh(bh, bh.web.req, 'sed');
       this.tracerService.sendData(spanInst, bh);
-      bh = await this.sd_FDbjNXkSFwPpoKmy(bh, parentSpanInst);
+      bh = await this.sd_8R9kDyRFeBfyGmoi(bh, parentSpanInst);
       //appendnew_next____addToBh___
       return bh;
     } catch (e) {
@@ -149,21 +147,22 @@ export class updateEntity2ById {
     }
   }
 
-  async sd_FDbjNXkSFwPpoKmy(bh, parentSpanInst) {
+  async sd_8R9kDyRFeBfyGmoi(bh, parentSpanInst) {
     const spanInst = this.tracerService.createSpan(
-      'sd_FDbjNXkSFwPpoKmy',
+      'sd_8R9kDyRFeBfyGmoi',
       parentSpanInst
     );
     try {
       const dmUtilsInst = new DmUtils('sd_MsveiTdT4FSAQYZr');
-      bh.result = await dmUtilsInst.updateById(
+      bh.result = await dmUtilsInst.updateByFilter(
         '_EN_s3flkd0m0o',
-        bh.input.body.entity_2
+        bh.filter,
+        bh.input.body.sed
       );
 
       this.tracerService.sendData(spanInst, bh);
       await this.sd_IpUaU51q741upXgr(bh, parentSpanInst);
-      //appendnew_next_sd_FDbjNXkSFwPpoKmy
+      //appendnew_next_sd_8R9kDyRFeBfyGmoi
       return bh;
     } catch (e) {
       return await this.errorHandler(
@@ -171,7 +170,7 @@ export class updateEntity2ById {
         e,
         '__operationNode__',
         spanInst,
-        'sd_FDbjNXkSFwPpoKmy'
+        'sd_8R9kDyRFeBfyGmoi'
       );
     }
   }
@@ -195,5 +194,5 @@ export class updateEntity2ById {
     this.tracerService.sendData(parentSpanInst, bh, true);
     throw e;
   }
-  //appendnew_flow_updateEntity2ById_Catch
+  //appendnew_flow_updateAllSeds_Catch
 }

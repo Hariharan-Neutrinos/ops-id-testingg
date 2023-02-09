@@ -1,5 +1,5 @@
 {
-    "/dm/erd/entity_2/update-all": {
+    "/dm/erd/sed/update-by-id": {
         "post": {
             "consumes": [],
             "produces": [],
@@ -10,19 +10,8 @@
                     "schema": {
                         "type": "object",
                         "properties": {
-                            "filter": {
-                                "type": "object",
-                                "properties": {
-                                    "id": {
-                                        "type": "number"
-                                    }
-                                },
-                                "required": [
-                                    "id"
-                                ]
-                            },
-                            "entity_2": {
-                                "$ref": "#/definitions/erd ~ entity_2",
+                            "sed": {
+                                "$ref": "#/definitions/erd ~ sed",
                                 "required": []
                             }
                         },
@@ -35,14 +24,14 @@
                     "schema": {
                         "type": "array",
                         "items": {
-                            "$ref": "#/definitions/erd ~ entity_2"
+                            "$ref": "#/definitions/erd ~ sed"
                         }
                     },
                     "description": ""
                 }
             },
             "tags": [
-                "entity_2"
+                "sed"
             ]
         }
     }

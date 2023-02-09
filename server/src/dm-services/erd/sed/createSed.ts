@@ -15,9 +15,10 @@ import { Middleware } from '../../../middleware/Middleware'; //_splitter_
 import * as settings from '../../../config/config'; //_splitter_
 import log from '../../../utils/Logger'; //_splitter_
 import { TracerService } from '../../../services/TracerService'; //_splitter_
+import { validateRequest } from '../../../middleware/SchemaValidator'; //_splitter_
 import { DmUtils } from '../../../utils/ndefault-datamodel/find/dmUtils'; //_splitter_
 //append_imports_end
-export class updateAllEntity2S {
+export class createSed {
   private sdService = new SDBaseService();
   private tracerService = new TracerService();
   private app;
@@ -33,7 +34,7 @@ export class updateAllEntity2S {
     middlewareCall,
     globalTimers
   ) {
-    this.serviceName = 'updateAllEntity2S';
+    this.serviceName = 'createSed';
     this.app = app;
     this.serviceBasePath = this.app.settings.base;
     this.generatedMiddlewares = generatedeMiddlewares;
@@ -48,7 +49,7 @@ export class updateAllEntity2S {
     globalTimers?
   ) {
     if (!instance) {
-      instance = new updateAllEntity2S(
+      instance = new createSed(
         app,
         generatedeMiddlewares,
         routeCall,
@@ -77,19 +78,19 @@ export class updateAllEntity2S {
   }
 
   async mountTimers() {
-    //appendnew_flow_updateAllEntity2S_TimerStart
+    //appendnew_flow_createSed_TimerStart
   }
 
   private mountAllMiddlewares() {
-    log.debug('mounting all middlewares for service :: updateAllEntity2S');
-    //appendnew_flow_updateAllEntity2S_MiddlewareStart
+    log.debug('mounting all middlewares for service :: createSed');
+    //appendnew_flow_createSed_MiddlewareStart
   }
 
   private mountAllPaths() {
-    log.debug('mounting all paths for service :: updateAllEntity2S');
+    log.debug('mounting all paths for service :: createSed');
 
     this.app['post'](
-      `${this.serviceBasePath}/dm/erd/entity_2/update-all`,
+      `${this.serviceBasePath}/dm/erd/sed/create`,
       cookieParser(),
       this.sdService.getMiddlesWaresBySequenceId(
         null,
@@ -97,6 +98,7 @@ export class updateAllEntity2S {
         this.generatedMiddlewares
       ),
 
+      validateRequest(),
       async (req, res, next) => {
         let bh: any = {};
         try {
@@ -107,7 +109,7 @@ export class updateAllEntity2S {
             next
           );
           let parentSpanInst = null;
-          bh = await this.___addToBh___(bh, parentSpanInst);
+          bh = await this.sd_0grguYfj00JSLkeH(bh, parentSpanInst);
           //appendnew_next_sd_Rv4kjRulVI3x4kSi
         } catch (e) {
           return await this.errorHandler(bh, e, 'sd_Rv4kjRulVI3x4kSi');
@@ -119,22 +121,22 @@ export class updateAllEntity2S {
         this.generatedMiddlewares
       )
     );
-    //appendnew_flow_updateAllEntity2S_HttpIn
+    //appendnew_flow_createSed_HttpIn
   }
-  //   service flows_updateAllEntity2S
+  //   service flows_createSed
 
-  //appendnew_flow_updateAllEntity2S_start
+  //appendnew_flow_createSed_start
 
-  async ___addToBh___(bh, parentSpanInst) {
+  async sd_0grguYfj00JSLkeH(bh, parentSpanInst) {
     const spanInst = this.tracerService.createSpan(
-      '___addToBh___',
+      'sd_0grguYfj00JSLkeH',
       parentSpanInst
     );
     try {
-      this.sdService.addDMPropertiesToBh(bh, bh.web.req, 'entity_2');
+      this.sdService.addDMPropertiesToBh(bh, bh.web.req, 'sed');
       this.tracerService.sendData(spanInst, bh);
-      bh = await this.sd_8R9kDyRFeBfyGmoi(bh, parentSpanInst);
-      //appendnew_next____addToBh___
+      bh = await this.__operationNode__(bh, parentSpanInst);
+      //appendnew_next_sd_0grguYfj00JSLkeH
       return bh;
     } catch (e) {
       return await this.errorHandler(
@@ -142,27 +144,23 @@ export class updateAllEntity2S {
         e,
         '___addToBh___',
         spanInst,
-        '___addToBh___'
+        'sd_0grguYfj00JSLkeH'
       );
     }
   }
 
-  async sd_8R9kDyRFeBfyGmoi(bh, parentSpanInst) {
+  async __operationNode__(bh, parentSpanInst) {
     const spanInst = this.tracerService.createSpan(
-      'sd_8R9kDyRFeBfyGmoi',
+      '__operationNode__',
       parentSpanInst
     );
     try {
       const dmUtilsInst = new DmUtils('sd_MsveiTdT4FSAQYZr');
-      bh.result = await dmUtilsInst.updateByFilter(
-        '_EN_s3flkd0m0o',
-        bh.filter,
-        bh.input.body.entity_2
-      );
+      bh.result = await dmUtilsInst.insert('_EN_s3flkd0m0o', bh.input.body.sed);
 
       this.tracerService.sendData(spanInst, bh);
       await this.sd_IpUaU51q741upXgr(bh, parentSpanInst);
-      //appendnew_next_sd_8R9kDyRFeBfyGmoi
+      //appendnew_next___operationNode__
       return bh;
     } catch (e) {
       return await this.errorHandler(
@@ -170,7 +168,7 @@ export class updateAllEntity2S {
         e,
         '__operationNode__',
         spanInst,
-        'sd_8R9kDyRFeBfyGmoi'
+        '__operationNode__'
       );
     }
   }
@@ -194,5 +192,5 @@ export class updateAllEntity2S {
     this.tracerService.sendData(parentSpanInst, bh, true);
     throw e;
   }
-  //appendnew_flow_updateAllEntity2S_Catch
+  //appendnew_flow_createSed_Catch
 }

@@ -2,8 +2,8 @@
 
 import { PrimaryGeneratedColumn, Entity, Column } from 'typeorm'; //_splitter_
 //append_imports_end
-@Entity('entity_2')
-export class entity_2 {
+@Entity('sed')
+export class sed {
   @PrimaryGeneratedColumn({ name: 'id' })
   id: number;
 }

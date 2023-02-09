@@ -15,9 +15,10 @@ import { Middleware } from '../../../middleware/Middleware'; //_splitter_
 import * as settings from '../../../config/config'; //_splitter_
 import log from '../../../utils/Logger'; //_splitter_
 import { TracerService } from '../../../services/TracerService'; //_splitter_
+import { validateRequest } from '../../../middleware/SchemaValidator'; //_splitter_
 import { DmUtils } from '../../../utils/ndefault-datamodel/find/dmUtils'; //_splitter_
 //append_imports_end
-export class findAllEntity2S {
+export class createAllSed {
   private sdService = new SDBaseService();
   private tracerService = new TracerService();
   private app;
@@ -33,7 +34,7 @@ export class findAllEntity2S {
     middlewareCall,
     globalTimers
   ) {
-    this.serviceName = 'findAllEntity2S';
+    this.serviceName = 'createAllSed';
     this.app = app;
     this.serviceBasePath = this.app.settings.base;
     this.generatedMiddlewares = generatedeMiddlewares;
@@ -48,7 +49,7 @@ export class findAllEntity2S {
     globalTimers?
   ) {
     if (!instance) {
-      instance = new findAllEntity2S(
+      instance = new createAllSed(
         app,
         generatedeMiddlewares,
         routeCall,
@@ -77,19 +78,19 @@ export class findAllEntity2S {
   }
 
   async mountTimers() {
-    //appendnew_flow_findAllEntity2S_TimerStart
+    //appendnew_flow_createAllSed_TimerStart
   }
 
   private mountAllMiddlewares() {
-    log.debug('mounting all middlewares for service :: findAllEntity2S');
-    //appendnew_flow_findAllEntity2S_MiddlewareStart
+    log.debug('mounting all middlewares for service :: createAllSed');
+    //appendnew_flow_createAllSed_MiddlewareStart
   }
 
   private mountAllPaths() {
-    log.debug('mounting all paths for service :: findAllEntity2S');
+    log.debug('mounting all paths for service :: createAllSed');
 
     this.app['post'](
-      `${this.serviceBasePath}/dm/erd/entity_2/find-all`,
+      `${this.serviceBasePath}/dm/erd/sed/create-all`,
       cookieParser(),
       this.sdService.getMiddlesWaresBySequenceId(
         null,
@@ -97,6 +98,7 @@ export class findAllEntity2S {
         this.generatedMiddlewares
       ),
 
+      validateRequest(),
       async (req, res, next) => {
         let bh: any = {};
         try {
@@ -119,11 +121,11 @@ export class findAllEntity2S {
         this.generatedMiddlewares
       )
     );
-    //appendnew_flow_findAllEntity2S_HttpIn
+    //appendnew_flow_createAllSed_HttpIn
   }
-  //   service flows_findAllEntity2S
+  //   service flows_createAllSed
 
-  //appendnew_flow_findAllEntity2S_start
+  //appendnew_flow_createAllSed_start
 
   async sd_0grguYfj00JSLkeH(bh, parentSpanInst) {
     const spanInst = this.tracerService.createSpan(
@@ -131,7 +133,7 @@ export class findAllEntity2S {
       parentSpanInst
     );
     try {
-      this.sdService.addDMPropertiesToBh(bh, bh.web.req, 'entity_2');
+      this.sdService.addDMPropertiesToBh(bh, bh.web.req, 'sed');
       this.tracerService.sendData(spanInst, bh);
       bh = await this.__operationNode__(bh, parentSpanInst);
       //appendnew_next_sd_0grguYfj00JSLkeH
@@ -154,13 +156,7 @@ export class findAllEntity2S {
     );
     try {
       const dmUtilsInst = new DmUtils('sd_MsveiTdT4FSAQYZr');
-      bh.result = await dmUtilsInst.find(
-        '_EN_s3flkd0m0o',
-        bh.filter,
-        bh.offSet,
-        bh.orderBy,
-        bh.pageSize
-      );
+      bh.result = await dmUtilsInst.insert('_EN_s3flkd0m0o', bh.input.body.sed);
 
       this.tracerService.sendData(spanInst, bh);
       await this.sd_IpUaU51q741upXgr(bh, parentSpanInst);
@@ -196,5 +192,5 @@ export class findAllEntity2S {
     this.tracerService.sendData(parentSpanInst, bh, true);
     throw e;
   }
-  //appendnew_flow_findAllEntity2S_Catch
+  //appendnew_flow_createAllSed_Catch
 }

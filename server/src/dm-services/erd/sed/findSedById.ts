@@ -17,7 +17,7 @@ import log from '../../../utils/Logger'; //_splitter_
 import { TracerService } from '../../../services/TracerService'; //_splitter_
 import { DmUtils } from '../../../utils/ndefault-datamodel/find/dmUtils'; //_splitter_
 //append_imports_end
-export class deleteAllEntity2S {
+export class findSedById {
   private sdService = new SDBaseService();
   private tracerService = new TracerService();
   private app;
@@ -33,7 +33,7 @@ export class deleteAllEntity2S {
     middlewareCall,
     globalTimers
   ) {
-    this.serviceName = 'deleteAllEntity2S';
+    this.serviceName = 'findSedById';
     this.app = app;
     this.serviceBasePath = this.app.settings.base;
     this.generatedMiddlewares = generatedeMiddlewares;
@@ -48,7 +48,7 @@ export class deleteAllEntity2S {
     globalTimers?
   ) {
     if (!instance) {
-      instance = new deleteAllEntity2S(
+      instance = new findSedById(
         app,
         generatedeMiddlewares,
         routeCall,
@@ -77,19 +77,19 @@ export class deleteAllEntity2S {
   }
 
   async mountTimers() {
-    //appendnew_flow_deleteAllEntity2S_TimerStart
+    //appendnew_flow_findSedById_TimerStart
   }
 
   private mountAllMiddlewares() {
-    log.debug('mounting all middlewares for service :: deleteAllEntity2S');
-    //appendnew_flow_deleteAllEntity2S_MiddlewareStart
+    log.debug('mounting all middlewares for service :: findSedById');
+    //appendnew_flow_findSedById_MiddlewareStart
   }
 
   private mountAllPaths() {
-    log.debug('mounting all paths for service :: deleteAllEntity2S');
+    log.debug('mounting all paths for service :: findSedById');
 
     this.app['post'](
-      `${this.serviceBasePath}/dm/erd/entity_2/delete-all`,
+      `${this.serviceBasePath}/dm/erd/sed/find-by-id`,
       cookieParser(),
       this.sdService.getMiddlesWaresBySequenceId(
         null,
@@ -107,7 +107,7 @@ export class deleteAllEntity2S {
             next
           );
           let parentSpanInst = null;
-          bh = await this.___addToBh___(bh, parentSpanInst);
+          bh = await this.sd_0grguYfj00JSLkeH(bh, parentSpanInst);
           //appendnew_next_sd_Rv4kjRulVI3x4kSi
         } catch (e) {
           return await this.errorHandler(bh, e, 'sd_Rv4kjRulVI3x4kSi');
@@ -119,22 +119,22 @@ export class deleteAllEntity2S {
         this.generatedMiddlewares
       )
     );
-    //appendnew_flow_deleteAllEntity2S_HttpIn
+    //appendnew_flow_findSedById_HttpIn
   }
-  //   service flows_deleteAllEntity2S
+  //   service flows_findSedById
 
-  //appendnew_flow_deleteAllEntity2S_start
+  //appendnew_flow_findSedById_start
 
-  async ___addToBh___(bh, parentSpanInst) {
+  async sd_0grguYfj00JSLkeH(bh, parentSpanInst) {
     const spanInst = this.tracerService.createSpan(
-      '___addToBh___',
+      'sd_0grguYfj00JSLkeH',
       parentSpanInst
     );
     try {
-      this.sdService.addDMPropertiesToBh(bh, bh.web.req, 'entity_2');
+      this.sdService.addDMPropertiesToBh(bh, bh.web.req, 'sed');
       this.tracerService.sendData(spanInst, bh);
       bh = await this.__operationNode__(bh, parentSpanInst);
-      //appendnew_next____addToBh___
+      //appendnew_next_sd_0grguYfj00JSLkeH
       return bh;
     } catch (e) {
       return await this.errorHandler(
@@ -142,7 +142,7 @@ export class deleteAllEntity2S {
         e,
         '___addToBh___',
         spanInst,
-        '___addToBh___'
+        'sd_0grguYfj00JSLkeH'
       );
     }
   }
@@ -154,10 +154,16 @@ export class deleteAllEntity2S {
     );
     try {
       const dmUtilsInst = new DmUtils('sd_MsveiTdT4FSAQYZr');
-      bh.result = await dmUtilsInst.delete('_EN_s3flkd0m0o', bh.filter);
+      bh.result = await dmUtilsInst.find(
+        '_EN_s3flkd0m0o',
+        bh.filter,
+        bh.offSet,
+        bh.orderBy,
+        bh.pageSize
+      );
 
       this.tracerService.sendData(spanInst, bh);
-      await this.sd_IpUaU51q741upXgr(bh, parentSpanInst);
+      bh = await this.___resultIndex0___(bh, parentSpanInst);
       //appendnew_next___operationNode__
       return bh;
     } catch (e) {
@@ -167,6 +173,34 @@ export class deleteAllEntity2S {
         '__operationNode__',
         spanInst,
         '__operationNode__'
+      );
+    }
+  }
+
+  async ___resultIndex0___(bh, parentSpanInst) {
+    const spanInst = this.tracerService.createSpan(
+      '___resultIndex0___',
+      parentSpanInst
+    );
+    try {
+      if (bh.result) {
+        if (Array.isArray(bh.result) && bh.result.length) {
+          bh.result = bh.result[0];
+        }
+      } else {
+        throw new Error('Not found.');
+      }
+      this.tracerService.sendData(spanInst, bh);
+      await this.sd_IpUaU51q741upXgr(bh, parentSpanInst);
+      //appendnew_next____resultIndex0___
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(
+        bh,
+        e,
+        '___resultIndex0___',
+        spanInst,
+        '___resultIndex0___'
       );
     }
   }
@@ -190,5 +224,5 @@ export class deleteAllEntity2S {
     this.tracerService.sendData(parentSpanInst, bh, true);
     throw e;
   }
-  //appendnew_flow_deleteAllEntity2S_Catch
+  //appendnew_flow_findSedById_Catch
 }

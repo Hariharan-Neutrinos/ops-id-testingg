@@ -1,5 +1,5 @@
 {
-    "/dm/erd/entity_2/create": {
+    "/dm/erd/sed/delete-by-id": {
         "post": {
             "consumes": [],
             "produces": [],
@@ -8,14 +8,22 @@
                     "in": "body",
                     "name": "body",
                     "schema": {
-                        "type": "object",
                         "properties": {
-                            "entity_2": {
-                                "$ref": "#/definitions/erd ~ entity_2",
-                                "required": []
+                            "filter": {
+                                "type": "object",
+                                "properties": {
+                                    "id": {
+                                        "type": "number"
+                                    }
+                                },
+                                "required": [
+                                    "id"
+                                ]
                             }
                         },
-                        "required": []
+                        "required": [
+                            "filter"
+                        ]
                     }
                 }
             ],
@@ -24,14 +32,14 @@
                     "schema": {
                         "type": "array",
                         "items": {
-                            "$ref": "#/definitions/erd ~ entity_2"
+                            "$ref": "#/definitions/erd ~ sed"
                         }
                     },
                     "description": ""
                 }
             },
             "tags": [
-                "entity_2"
+                "sed"
             ]
         }
     }

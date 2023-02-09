@@ -1,5 +1,5 @@
 {
-    "/dm/erd/entity_2/find-all": {
+    "/dm/erd/sed/update-all": {
         "post": {
             "consumes": [],
             "produces": [],
@@ -8,25 +8,25 @@
                     "in": "body",
                     "name": "body",
                     "schema": {
+                        "type": "object",
                         "properties": {
                             "filter": {
-                                "type": "object"
+                                "type": "object",
+                                "properties": {
+                                    "id": {
+                                        "type": "number"
+                                    }
+                                },
+                                "required": [
+                                    "id"
+                                ]
                             },
-                            "orderBy": {
-                                "type": "object"
-                            },
-                            "pageSize": {
-                                "type": "number",
-                                "minimum": 0
-                            },
-                            "offSet": {
-                                "type": "number",
-                                "minimum": 0
+                            "sed": {
+                                "$ref": "#/definitions/erd ~ sed",
+                                "required": []
                             }
                         },
-                        "required": [
-                            "filter"
-                        ]
+                        "required": []
                     }
                 }
             ],
@@ -35,14 +35,14 @@
                     "schema": {
                         "type": "array",
                         "items": {
-                            "$ref": "#/definitions/erd ~ entity_2"
+                            "$ref": "#/definitions/erd ~ sed"
                         }
                     },
                     "description": ""
                 }
             },
             "tags": [
-                "entity_2"
+                "sed"
             ]
         }
     }

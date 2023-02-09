@@ -17,7 +17,7 @@ import log from '../../../utils/Logger'; //_splitter_
 import { TracerService } from '../../../services/TracerService'; //_splitter_
 import { DmUtils } from '../../../utils/ndefault-datamodel/find/dmUtils'; //_splitter_
 //append_imports_end
-export class deleteEntity2ById {
+export class deleteSedById {
   private sdService = new SDBaseService();
   private tracerService = new TracerService();
   private app;
@@ -33,7 +33,7 @@ export class deleteEntity2ById {
     middlewareCall,
     globalTimers
   ) {
-    this.serviceName = 'deleteEntity2ById';
+    this.serviceName = 'deleteSedById';
     this.app = app;
     this.serviceBasePath = this.app.settings.base;
     this.generatedMiddlewares = generatedeMiddlewares;
@@ -48,7 +48,7 @@ export class deleteEntity2ById {
     globalTimers?
   ) {
     if (!instance) {
-      instance = new deleteEntity2ById(
+      instance = new deleteSedById(
         app,
         generatedeMiddlewares,
         routeCall,
@@ -77,19 +77,19 @@ export class deleteEntity2ById {
   }
 
   async mountTimers() {
-    //appendnew_flow_deleteEntity2ById_TimerStart
+    //appendnew_flow_deleteSedById_TimerStart
   }
 
   private mountAllMiddlewares() {
-    log.debug('mounting all middlewares for service :: deleteEntity2ById');
-    //appendnew_flow_deleteEntity2ById_MiddlewareStart
+    log.debug('mounting all middlewares for service :: deleteSedById');
+    //appendnew_flow_deleteSedById_MiddlewareStart
   }
 
   private mountAllPaths() {
-    log.debug('mounting all paths for service :: deleteEntity2ById');
+    log.debug('mounting all paths for service :: deleteSedById');
 
     this.app['post'](
-      `${this.serviceBasePath}/dm/erd/entity_2/delete-by-id`,
+      `${this.serviceBasePath}/dm/erd/sed/delete-by-id`,
       cookieParser(),
       this.sdService.getMiddlesWaresBySequenceId(
         null,
@@ -119,11 +119,11 @@ export class deleteEntity2ById {
         this.generatedMiddlewares
       )
     );
-    //appendnew_flow_deleteEntity2ById_HttpIn
+    //appendnew_flow_deleteSedById_HttpIn
   }
-  //   service flows_deleteEntity2ById
+  //   service flows_deleteSedById
 
-  //appendnew_flow_deleteEntity2ById_start
+  //appendnew_flow_deleteSedById_start
 
   async ___addToBh___(bh, parentSpanInst) {
     const spanInst = this.tracerService.createSpan(
@@ -131,7 +131,7 @@ export class deleteEntity2ById {
       parentSpanInst
     );
     try {
-      this.sdService.addDMPropertiesToBh(bh, bh.web.req, 'entity_2');
+      this.sdService.addDMPropertiesToBh(bh, bh.web.req, 'sed');
       this.tracerService.sendData(spanInst, bh);
       bh = await this.__operationNode__(bh, parentSpanInst);
       //appendnew_next____addToBh___
@@ -190,5 +190,5 @@ export class deleteEntity2ById {
     this.tracerService.sendData(parentSpanInst, bh, true);
     throw e;
   }
-  //appendnew_flow_deleteEntity2ById_Catch
+  //appendnew_flow_deleteSedById_Catch
 }

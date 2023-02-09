@@ -18,7 +18,7 @@ import { TracerService } from '../../../services/TracerService'; //_splitter_
 import { validateRequest } from '../../../middleware/SchemaValidator'; //_splitter_
 import { DmUtils } from '../../../utils/ndefault-datamodel/find/dmUtils'; //_splitter_
 //append_imports_end
-export class createAllEntity2 {
+export class updateSedById {
   private sdService = new SDBaseService();
   private tracerService = new TracerService();
   private app;
@@ -34,7 +34,7 @@ export class createAllEntity2 {
     middlewareCall,
     globalTimers
   ) {
-    this.serviceName = 'createAllEntity2';
+    this.serviceName = 'updateSedById';
     this.app = app;
     this.serviceBasePath = this.app.settings.base;
     this.generatedMiddlewares = generatedeMiddlewares;
@@ -49,7 +49,7 @@ export class createAllEntity2 {
     globalTimers?
   ) {
     if (!instance) {
-      instance = new createAllEntity2(
+      instance = new updateSedById(
         app,
         generatedeMiddlewares,
         routeCall,
@@ -78,19 +78,19 @@ export class createAllEntity2 {
   }
 
   async mountTimers() {
-    //appendnew_flow_createAllEntity2_TimerStart
+    //appendnew_flow_updateSedById_TimerStart
   }
 
   private mountAllMiddlewares() {
-    log.debug('mounting all middlewares for service :: createAllEntity2');
-    //appendnew_flow_createAllEntity2_MiddlewareStart
+    log.debug('mounting all middlewares for service :: updateSedById');
+    //appendnew_flow_updateSedById_MiddlewareStart
   }
 
   private mountAllPaths() {
-    log.debug('mounting all paths for service :: createAllEntity2');
+    log.debug('mounting all paths for service :: updateSedById');
 
     this.app['post'](
-      `${this.serviceBasePath}/dm/erd/entity_2/create-all`,
+      `${this.serviceBasePath}/dm/erd/sed/update-by-id`,
       cookieParser(),
       this.sdService.getMiddlesWaresBySequenceId(
         null,
@@ -109,7 +109,7 @@ export class createAllEntity2 {
             next
           );
           let parentSpanInst = null;
-          bh = await this.sd_0grguYfj00JSLkeH(bh, parentSpanInst);
+          bh = await this.___addToBh___(bh, parentSpanInst);
           //appendnew_next_sd_Rv4kjRulVI3x4kSi
         } catch (e) {
           return await this.errorHandler(bh, e, 'sd_Rv4kjRulVI3x4kSi');
@@ -121,22 +121,22 @@ export class createAllEntity2 {
         this.generatedMiddlewares
       )
     );
-    //appendnew_flow_createAllEntity2_HttpIn
+    //appendnew_flow_updateSedById_HttpIn
   }
-  //   service flows_createAllEntity2
+  //   service flows_updateSedById
 
-  //appendnew_flow_createAllEntity2_start
+  //appendnew_flow_updateSedById_start
 
-  async sd_0grguYfj00JSLkeH(bh, parentSpanInst) {
+  async ___addToBh___(bh, parentSpanInst) {
     const spanInst = this.tracerService.createSpan(
-      'sd_0grguYfj00JSLkeH',
+      '___addToBh___',
       parentSpanInst
     );
     try {
-      this.sdService.addDMPropertiesToBh(bh, bh.web.req, 'entity_2');
+      this.sdService.addDMPropertiesToBh(bh, bh.web.req, 'sed');
       this.tracerService.sendData(spanInst, bh);
-      bh = await this.__operationNode__(bh, parentSpanInst);
-      //appendnew_next_sd_0grguYfj00JSLkeH
+      bh = await this.sd_FDbjNXkSFwPpoKmy(bh, parentSpanInst);
+      //appendnew_next____addToBh___
       return bh;
     } catch (e) {
       return await this.errorHandler(
@@ -144,26 +144,26 @@ export class createAllEntity2 {
         e,
         '___addToBh___',
         spanInst,
-        'sd_0grguYfj00JSLkeH'
+        '___addToBh___'
       );
     }
   }
 
-  async __operationNode__(bh, parentSpanInst) {
+  async sd_FDbjNXkSFwPpoKmy(bh, parentSpanInst) {
     const spanInst = this.tracerService.createSpan(
-      '__operationNode__',
+      'sd_FDbjNXkSFwPpoKmy',
       parentSpanInst
     );
     try {
       const dmUtilsInst = new DmUtils('sd_MsveiTdT4FSAQYZr');
-      bh.result = await dmUtilsInst.insert(
+      bh.result = await dmUtilsInst.updateById(
         '_EN_s3flkd0m0o',
-        bh.input.body.entity_2
+        bh.input.body.sed
       );
 
       this.tracerService.sendData(spanInst, bh);
       await this.sd_IpUaU51q741upXgr(bh, parentSpanInst);
-      //appendnew_next___operationNode__
+      //appendnew_next_sd_FDbjNXkSFwPpoKmy
       return bh;
     } catch (e) {
       return await this.errorHandler(
@@ -171,7 +171,7 @@ export class createAllEntity2 {
         e,
         '__operationNode__',
         spanInst,
-        '__operationNode__'
+        'sd_FDbjNXkSFwPpoKmy'
       );
     }
   }
@@ -195,5 +195,5 @@ export class createAllEntity2 {
     this.tracerService.sendData(parentSpanInst, bh, true);
     throw e;
   }
-  //appendnew_flow_createAllEntity2_Catch
+  //appendnew_flow_updateSedById_Catch
 }
